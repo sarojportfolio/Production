@@ -1,53 +1,53 @@
+/* Global Styles */
 body {
     font-family: Arial, sans-serif;
-    background-color: #1e1e2e;
-    color: white;
     margin: 0;
     padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+    background-color: #f4f4f4;
+    color: #333;
 }
 
+/* Container */
 .container {
-    text-align: center;
     width: 90%;
-    max-width: 800px;
+    max-width: 1200px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-h1 {
-    margin-bottom: 20px;
-}
-
-table {
+/* Table Styles */
+table.scoreboard {
     width: 100%;
     border-collapse: collapse;
-    margin: 0 auto;
+    margin-top: 20px;
 }
 
-th, td {
-    border: 1px solid #555;
-    padding: 10px;
+table.scoreboard th, table.scoreboard td {
+    padding: 12px;
     text-align: center;
+    border: 1px solid #ddd;
 }
 
-th {
-    background-color: #333;
+table.scoreboard th {
+    background-color: #4CAF50;
+    color: white;
 }
 
-.alive-bar, .knocked-bar, .eliminated-bar {
-    height: 10px;
+table.scoreboard tr:nth-child(even) {
+    background-color: #f9f9f9;
 }
 
-.alive-bar {
-    background-color: #00ff00;
+table.scoreboard tr:hover {
+    background-color: #f1f1f1;
 }
 
-.knocked-bar {
-    background-color: #ff9900;
-}
-
-.eliminated-bar {
-    background-color: #ff0000;
+/* Error message */
+#error-message {
+    display: none;
+    color: red;
+    text-align: center;
+    margin-top: 20px;
 }
