@@ -1,21 +1,31 @@
 /* Global Styles */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Arial', sans-serif;
+    background: #1a1a1a; /* Dark background */
+    color: #ffffff;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
-    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
 }
 
 /* Container */
 .container {
     width: 90%;
     max-width: 1200px;
-    margin: 50px auto;
+    background-color: #252525; /* Darker background for the container */
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
     padding: 20px;
-    background-color: white;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.title {
+    color: #00ff00; /* Neon green for esports theme */
+    font-size: 2.5rem;
+    margin-bottom: 30px;
 }
 
 /* Table Styles */
@@ -23,25 +33,45 @@ table.scoreboard {
     width: 100%;
     border-collapse: collapse;
     margin-top: 20px;
+    font-size: 1rem;
+    text-align: center;
+    border-radius: 10px;
 }
 
 table.scoreboard th, table.scoreboard td {
-    padding: 12px;
-    text-align: center;
-    border: 1px solid #ddd;
+    padding: 15px;
+    border: 1px solid #333;
 }
 
 table.scoreboard th {
-    background-color: #4CAF50;
+    background-color: #4CAF50; /* Neon green background for headers */
     color: white;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+table.scoreboard td {
+    background-color: #2d2d2d; /* Dark background for data rows */
+    color: #ccc;
 }
 
 table.scoreboard tr:nth-child(even) {
-    background-color: #f9f9f9;
+    background-color: #333;
 }
 
 table.scoreboard tr:hover {
-    background-color: #f1f1f1;
+    background-color: #4CAF50; /* Hover effect to highlight rows */
+    cursor: pointer;
+    color: white;
+}
+
+table.scoreboard td:first-child {
+    font-weight: bold;
+    color: #00ff00;
+}
+
+table.scoreboard td:last-child {
+    color: #ffdd57; /* Neon yellow for eliminations */
 }
 
 /* Error message */
