@@ -73,7 +73,7 @@ table.scoreboard td.rank {
 /* Team Name Color */
 table.scoreboard td.team-name {
     background-color: #d3d3d3; /* Light grey for team name */
-    color: black; /* Set text color to black */
+    color: white; /* Set text color to white */
 }
 
 /* Alive, Points, Kills Color */
@@ -81,7 +81,7 @@ table.scoreboard td.alive,
 table.scoreboard td.points,
 table.scoreboard td.kills {
     background-color: #d7a7f1; /* Light purple for alive, points, kills */
-    color: black; /* Set text color to black */
+    color: white; /* Set text color to white */
 }
 
 /* Hover Effect on Rows */
