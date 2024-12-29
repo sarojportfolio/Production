@@ -1,7 +1,7 @@
 /* Global Styles */
 body {
     font-family: 'Arial', sans-serif;
-    background: #1a1a1a; /* Dark background */
+    background: #0f0f0f; /* Dark background for a modern, esports feel */
     color: #ffffff;
     margin: 0;
     padding: 0;
@@ -9,23 +9,28 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
+    overflow: hidden; /* Prevent scrolling */
 }
 
 /* Container */
 .container {
     width: 90%;
     max-width: 1200px;
-    background-color: #252525; /* Darker background for the container */
-    border-radius: 12px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
-    padding: 20px;
+    background-color: #1c1c1c; /* Slightly lighter dark background */
+    border-radius: 15px;
+    box-shadow: 0 6px 40px rgba(0, 255, 0, 0.3); /* Neon green glow around the container */
+    padding: 30px;
     text-align: center;
+    position: relative;
 }
 
+/* Title */
 .title {
-    color: #00ff00; /* Neon green for esports theme */
     font-size: 2.5rem;
+    color: #39FF14; /* Neon green for esports theme */
     margin-bottom: 30px;
+    font-weight: bold;
+    text-transform: uppercase;
 }
 
 /* Table Styles */
@@ -33,51 +38,91 @@ table.scoreboard {
     width: 100%;
     border-collapse: collapse;
     margin-top: 20px;
-    font-size: 1rem;
+    font-size: 1.1rem;
     text-align: center;
     border-radius: 10px;
+    overflow: hidden;
 }
 
-table.scoreboard th, table.scoreboard td {
-    padding: 15px;
-    border: 1px solid #333;
-}
-
+/* Table Header */
 table.scoreboard th {
-    background-color: #4CAF50; /* Neon green background for headers */
-    color: white;
+    padding: 15px;
+    background-color: #444; /* Dark grey background for headers */
+    color: #39FF14; /* Neon green text for header */
+    font-weight: bold;
     text-transform: uppercase;
-    font-weight: bold;
+    letter-spacing: 1px;
 }
 
+/* Table Data Rows */
 table.scoreboard td {
-    background-color: #2d2d2d; /* Dark background for data rows */
-    color: #ccc;
+    padding: 12px;
+    background-color: #222; /* Dark rows for data */
+    color: #bbb;
+    border-bottom: 1px solid #333;
 }
 
-table.scoreboard tr:nth-child(even) {
-    background-color: #333;
-}
-
+/* Hover Effect on Rows */
 table.scoreboard tr:hover {
-    background-color: #4CAF50; /* Hover effect to highlight rows */
+    background-color: #39FF14; /* Neon green hover effect */
+    color: #000; /* Dark text on hover */
     cursor: pointer;
-    color: white;
+    transition: background-color 0.3s, color 0.3s;
 }
 
-table.scoreboard td:first-child {
+/* Highlighting Rankings */
+table.scoreboard tr:nth-child(1) td,
+table.scoreboard tr:nth-child(2) td,
+table.scoreboard tr:nth-child(3) td {
+    background-color: #ffdf00; /* Gold, Silver, and Bronze for top 3 teams */
+    color: #222;
     font-weight: bold;
-    color: #00ff00;
 }
 
-table.scoreboard td:last-child {
-    color: #ffdd57; /* Neon yellow for eliminations */
+/* Neon Glowing Effect for Rankings */
+table.scoreboard tr:nth-child(1) td {
+    background-color: #ffd700; /* Gold */
+}
+
+table.scoreboard tr:nth-child(2) td {
+    background-color: #c0c0c0; /* Silver */
+}
+
+table.scoreboard tr:nth-child(3) td {
+    background-color: #cd7f32; /* Bronze */
+}
+
+/* Table Bottom Border */
+table.scoreboard tr:last-child td {
+    border-bottom: none;
 }
 
 /* Error message */
 #error-message {
     display: none;
-    color: red;
+    color: #ff4040;
+    font-size: 1.2rem;
     text-align: center;
     margin-top: 20px;
+}
+
+/* Animated flashing effect for live updates */
+@keyframes flashUpdate {
+    0% {
+        background-color: #222;
+        color: #bbb;
+    }
+    50% {
+        background-color: #39FF14; /* Neon green flash */
+        color: #000;
+    }
+    100% {
+        background-color: #222;
+        color: #bbb;
+    }
+}
+
+/* Apply animation to rows as data updates */
+table.scoreboard tr.updated {
+    animation: flashUpdate 1s ease-out;
 }
