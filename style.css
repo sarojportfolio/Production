@@ -15,7 +15,7 @@ body {
 /* Container */
 .container {
     width: 90%;
-    max-width: 1200px;
+    max-width: 900px;
     background-color: #1c1c1c; /* Slightly lighter dark background */
     border-radius: 15px;
     box-shadow: 0 6px 40px rgba(0, 255, 0, 0.3); /* Neon green glow around the container */
@@ -104,25 +104,4 @@ table.scoreboard tr:last-child td {
     font-size: 1.2rem;
     text-align: center;
     margin-top: 20px;
-}
-
-/* Animated flashing effect for live updates */
-@keyframes flashUpdate {
-    0% {
-        background-color: #222;
-        color: #bbb;
-    }
-    50% {
-        background-color: #39FF14; /* Neon green flash */
-        color: #000;
-    }
-    100% {
-        background-color: #222;
-        color: #bbb;
-    }
-}
-
-/* Apply animation to rows as data updates */
-table.scoreboard tr.updated {
-    animation: flashUpdate 1s ease-out;
 }
