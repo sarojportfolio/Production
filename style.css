@@ -21,7 +21,6 @@ body {
     padding: 20px;
     box-shadow: 0 0 30px rgba(0, 255, 0, 0.5); /* Green glow effect for esports */
     text-align: center;
-    position: relative;
 }
 
 /* Title */
@@ -87,15 +86,6 @@ table.scoreboard tr:hover {
     color: #000;
     cursor: pointer;
     transition: background-color 0.3s, color 0.3s;
-}
-
-/* Top 3 Ranks */
-table.scoreboard tr:nth-child(1) td,
-table.scoreboard tr:nth-child(2) td,
-table.scoreboard tr:nth-child(3) td {
-    background-color: #ffdf00; /* Gold, Silver, and Bronze for top 3 */
-    color: #222;
-    font-weight: bold;
 }
 
 /* Wipeout Text */
