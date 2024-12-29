@@ -64,6 +64,23 @@ table.scoreboard td {
     border-bottom: 1px solid #444;
 }
 
+/* Rank Color */
+table.scoreboard td.rank {
+    background-color: #f1e15b; /* Light yellow for rank */
+}
+
+/* Team Name Color */
+table.scoreboard td.team-name {
+    background-color: #d3d3d3; /* Light grey for team name */
+}
+
+/* Alive, Points, Kills Color */
+table.scoreboard td.alive,
+table.scoreboard td.points,
+table.scoreboard td.kills {
+    background-color: #d7a7f1; /* Light purple for alive, points, kills */
+}
+
 /* Hover Effect on Rows */
 table.scoreboard tr:hover {
     background-color: #39FF14; /* Neon green hover effect */
@@ -81,17 +98,10 @@ table.scoreboard tr:nth-child(3) td {
     font-weight: bold;
 }
 
-/* Neon Glowing Effect for Rankings */
-table.scoreboard tr:nth-child(1) td {
-    background-color: #ffd700; /* Gold */
-}
-
-table.scoreboard tr:nth-child(2) td {
-    background-color: #c0c0c0; /* Silver */
-}
-
-table.scoreboard tr:nth-child(3) td {
-    background-color: #cd7f32; /* Bronze */
+/* Wipeout Text */
+table.scoreboard td.wipeout {
+    color: red;
+    font-weight: bold;
 }
 
 /* Table Bottom Border */
@@ -99,13 +109,13 @@ table.scoreboard tr:last-child td {
     border-bottom: none;
 }
 
-/* Error message */
-#error-message {
-    display: none;
-    color: #ff4040;
-    font-size: 1.2rem;
-    text-align: center;
-    margin-top: 20px;
+/* Green Line for Alive column */
+.alive-line {
+    display: inline-block;
+    width: 20px;
+    height: 4px;
+    background-color: green;
+    margin-top: 4px;
 }
 
 /* Responsive design for smaller screens */
