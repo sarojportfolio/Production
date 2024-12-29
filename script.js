@@ -1,6 +1,6 @@
-// Replace these with your actual Google Sheet ID and API key
+// Replace with your actual Google Sheet ID and API key
 const sheetId = '11L_NMzjjOQuGVVsshtP3Dz4r_mGbiO88gUB3Q9Vytf0';  // Your Google Sheet ID
-const range = 'Sheet1!A1:G100';  // Adjust this to the range where your data is
+const range = 'Sheet1!A1:F100';  // Adjust this to the range of data you want from your sheet
 const apiKey = 'AIzaSyDSpekvb2VK6aUKgDyMk3u_p8YiA4cdAsA';  // Your API key
 
 const leaderboardUrl = `https://sheets.googleapis.com/v4/spreadsheets/${sheetId}/values/${range}?key=${apiKey}`;
@@ -22,9 +22,8 @@ function fetchLeaderboardData() {
                         <td>${row[0]}</td>  <!-- Team name (column A) -->
                         <td>${row[1]}</td>  <!-- Alive (column B) -->
                         <td>${row[2]}</td>  <!-- Knocked (column C) -->
-                        <td>${row[3]}</td>  <!-- Eliminated (column D) -->
-                        <td>${row[4]}</td>  <!-- Points (column E) -->
-                        <td>${row[5]}</td>  <!-- Eliminations (column F) -->
+                        <td>${row[3]}</td>  <!-- Points (column D) -->
+                        <td>${row[4]}</td>  <!-- Eliminations (column E) -->
                     `;
                     scoreboardBody.appendChild(tr);
                 });
