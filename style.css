@@ -64,42 +64,21 @@ table.scoreboard td {
     border-bottom: 1px solid #444;
 }
 
-/* Rank Column */
+/* Rank Color */
 table.scoreboard td.rank {
     background-color: #f1e15b; /* Light yellow for rank */
-    color: #000;
-    font-weight: bold;
 }
 
-/* Team Name Column */
+/* Team Name Color */
 table.scoreboard td.team-name {
     background-color: #d3d3d3; /* Light grey for team name */
-    color: #111;
-    font-weight: bold;
 }
 
-/* Alive, Points, Kills Columns */
+/* Alive, Points, Kills Color */
 table.scoreboard td.alive,
 table.scoreboard td.points,
 table.scoreboard td.kills {
-    background-color: #d7a7f1; /* Light purple for these columns */
-    color: #111;
-    font-weight: bold;
-}
-
-/* Alive Column - Green Line */
-.alive-line {
-    display: inline-block;
-    width: 20px;
-    height: 4px;
-    background-color: green;
-    margin-top: 4px;
-}
-
-/* Wipeout Text */
-table.scoreboard td.alive.wipeout {
-    color: red;
-    font-weight: bold;
+    background-color: #d7a7f1; /* Light purple for alive, points, kills */
 }
 
 /* Hover Effect on Rows */
@@ -114,8 +93,14 @@ table.scoreboard tr:hover {
 table.scoreboard tr:nth-child(1) td,
 table.scoreboard tr:nth-child(2) td,
 table.scoreboard tr:nth-child(3) td {
-    background-color: #ffdf00; /* Gold for top 1 */
+    background-color: #ffdf00; /* Gold, Silver, and Bronze for top 3 */
     color: #222;
+    font-weight: bold;
+}
+
+/* Wipeout Text */
+table.scoreboard td.wipeout {
+    color: red;
     font-weight: bold;
 }
 
@@ -124,16 +109,16 @@ table.scoreboard tr:last-child td {
     border-bottom: none;
 }
 
-/* Error message */
-#error-message {
-    display: none;
-    color: #ff4040;
-    font-size: 1.2rem;
-    text-align: center;
-    margin-top: 20px;
+/* Green Line for Alive column */
+.alive-line {
+    display: inline-block;
+    width: 20px;
+    height: 4px;
+    background-color: green;
+    margin-top: 4px;
 }
 
-/* Responsive Design for Mobile */
+/* Responsive design for smaller screens */
 @media (max-width: 600px) {
     table.scoreboard th, table.scoreboard td {
         padding: 8px; /* Smaller padding for smaller screens */
