@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Scoreboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Scoreboard</h1>
+        <table class="scoreboard">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Team</th>
+                    <th>Alive</th>
+                    <th>Knocked</th>
+                    <th>Eliminated</th>
+                    <th>Pts</th>
+                    <th>Elims</th>
+                </tr>
+            </thead>
+            <tbody id="scoreboard-body">
+                <!-- Dynamic rows will be inserted here by JavaScript -->
+            </tbody>
+        </table>
+        <p id="error-message" style="display: none; color: red; text-align: center;">
+            Unable to load data. Please try again later.
+        </p>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
