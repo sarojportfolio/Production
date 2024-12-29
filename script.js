@@ -65,7 +65,7 @@ function sortRowsByAlive(rows) {
 function getAliveLine(aliveValue) {
     const lines = [];
     for (let i = 0; i < aliveValue; i++) {
-        lines.push('<span class="alive-line"></span>');
+        lines.push('<span class="alive-line"></span>'); // Create a green line for each alive
     }
     return lines.join(''); // Join the green lines into a single string
 }
