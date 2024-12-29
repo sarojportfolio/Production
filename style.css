@@ -60,6 +60,7 @@ table.scoreboard th {
 table.scoreboard td {
     padding: 10px;
     background-color: #333; /* Slightly lighter dark rows */
+    color: #bbb;
     border-bottom: 1px solid #444;
 }
 
@@ -83,31 +84,6 @@ table.scoreboard td.kills {
     color: white; /* Set text color to white */
 }
 
-/* Alive Section Green Lines */
-table.scoreboard td.alive {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.alive-line-container {
-    width: 80%; /* Adjust the width for green lines */
-    display: flex;
-    justify-content: space-between;
-}
-
-.alive-line {
-    height: 6px;
-    width: 20%;
-    background-color: green;
-    margin: 2px;
-}
-
-/* Hide Alive Section Numbers */
-.alive-number {
-    display: none; /* Hide the number text */
-}
-
 /* Hover Effect on Rows */
 table.scoreboard tr:hover {
     background-color: #39FF14; /* Neon green hover effect */
@@ -129,12 +105,20 @@ table.scoreboard tr:nth-child(3) td {
 table.scoreboard td.wipeout {
     color: red;
     font-weight: bold;
-    text-transform: uppercase;
 }
 
 /* Table Bottom Border */
 table.scoreboard tr:last-child td {
     border-bottom: none;
+}
+
+/* Green Line for Alive column */
+.alive-line {
+    display: inline-block;
+    width: 20px;
+    height: 4px;
+    background-color: green;
+    margin-top: 4px;
 }
 
 /* Responsive design for smaller screens */
