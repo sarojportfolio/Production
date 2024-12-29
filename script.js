@@ -25,6 +25,9 @@ function fetchLeaderboardData() {
                         <td>${row[3]}</td>  <!-- Points (column D) -->
                         <td>${row[4]}</td>  <!-- Eliminations (column E) -->
                     `;
+                    
+                    // Add a class to indicate this row has been updated
+                    tr.classList.add('updated');
                     scoreboardBody.appendChild(tr);
                 });
             } else {
