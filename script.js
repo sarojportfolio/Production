@@ -14,16 +14,27 @@ function fetchLeaderboardData() {
                 const scoreboardBody = document.getElementById('scoreboard-body');
                 scoreboardBody.innerHTML = '';  // Clear previous data
 
+                const sortedRows = sortRowsByAlive(rows);
+
                 // Loop through the rows and create table rows dynamically
-                rows.forEach((row, index) => {
+                sortedRows.forEach((row, index) => {
                     const tr = document.createElement('tr');
+                    
+                    const aliveValue = parseInt(row[2], 10); // Alive column (assumed to be 3rd column)
+                    const aliveLine = getAliveLine(aliveValue);
+                    const isWipeout = aliveValue === 0;
+
                     tr.innerHTML = `
-                        <td>${index + 1}</td> <!-- Rank (index+1) -->
-                        <td>${row[1]}</td> <!-- Team Name (column B) -->
-                        <td>${row[2]}</td> <!-- Alive (column C) -->
-                        <td>${row[3]}</td> <!-- Points (column D) -->
-                        <td>${row[4]}</td> <!-- Kills (column E) -->
+                        <td class="rank">${index + 1}</td> <!-- Rank -->
+                        <td class="team-name">${row[1]}</td> <!-- Team Name -->
+                        <td class="alive">${isWipeout ? 'Wipeout' : aliveLine}</td> <!-- Alive -->
+                        <td class="points">${row[3]}</td> <!-- Points -->
+                        <td class="kills">${row[4]}</td> <!-- Kills -->
                     `;
+                    
+                    if (isWipeout) {
+                        tr.querySelector('.alive').classList.add('wipeout');
+                    }
                     
                     scoreboardBody.appendChild(tr);
                 });
@@ -35,6 +46,28 @@ function fetchLeaderboardData() {
             console.error('Error fetching data:', error);
             showError('Unable to load data. Please try again later.');
         });
+}
+
+// Sort rows based on Alive (ascending), so Wipeout goes to the bottom
+function sortRowsByAlive(rows) {
+    return rows.sort((a, b) => {
+        const aliveA = parseInt(a[2], 10);
+        const aliveB = parseInt(b[2], 10);
+        
+        // Move Wipeout (0) to the bottom
+        if (aliveA === 0) return 1;
+        if (aliveB === 0) return -1;
+        return aliveB - aliveA; // Sort descending by Alive
+    });
+}
+
+// Function to return the green line for the Alive value
+function getAliveLine(aliveValue) {
+    const lines = [];
+    for (let i = 0; i < aliveValue; i++) {
+        lines.push('<span class="alive-line"></span>');
+    }
+    return lines.join(''); // Join the green lines into a single string
 }
 
 // Display error message
